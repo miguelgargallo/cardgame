@@ -1,0 +1,129 @@
+// Variables
+$black: #000000;
+$white: #ffffff;
+
+$common: #dbdbdb;
+$rare: #4299f8;
+$epic: #ba49cd;
+$legendary: #ee9d35;
+
+// Classes
+.card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    max-width: 360px;
+}
+
+.card-banner {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 5rem;
+
+    &__common {
+        background-color: $common;
+    }
+    &__rare {
+        background-color: $rare;
+    }
+    &__epic {
+        background-color: $epic;
+    }
+    &__legendary {
+        background-color: $legendary;
+    }
+
+    &-logo {
+        background-position: center;
+        background-size: 8rem 8rem;
+        background-color: $white;
+        width: 8rem;
+        height: 8rem;
+        box-shadow: 0 0.25rem 1rem rgba(black, 0.2);
+        border-radius: 50%;
+        transform: translateY(50%);
+        transition: transform 200ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+        &:hover {
+            transform: translateY(50%) scale(1.15);
+        }
+    }
+}
+
+.card-menu {
+    width: 100%;
+    height: 4rem;
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.card-body {
+    text-align: center;
+    h2 {
+        margin-bottom: 0.25rem;
+    }
+
+    &-icon {
+        &__common {
+            color: $common;
+        }
+        &__rare {
+            color: $rare;
+        }
+        &__epic {
+            color: $epic;
+        }
+        &__legendary {
+            color: $legendary;
+        }
+    }
+
+    &-separator {
+        display: flex;
+        justify-content: center;
+
+        hr {
+            background-color: rgba($black, 0.25);
+            width: 80%;
+        }
+    }
+
+    &-effects {
+        &__common {
+            .react-sweet-progress-line-inner-status-active {
+                background-color: $common !important;
+            }
+        }
+        &__rare {
+            .react-sweet-progress-line-inner-status-active {
+                background-color: $rare !important;
+            }
+        }
+        &__epic {
+            .react-sweet-progress-line-inner-status-active {
+                background-color: $epic !important;
+            }
+        }
+        &__legendary {
+            .react-sweet-progress-line-inner-status-active {
+                background-color: $legendary !important;
+            }
+        }
+    }
+}
+
+.card-footer {
+    border-top: none !important;
+    font-size: 12px;
+    &-number {
+        background-color: rgb(239, 239, 239);
+        border-radius: 10px 0px 0px;
+        font-size: 10px;
+        margin-left: auto;
+        width: 20%;
+    }
+}
